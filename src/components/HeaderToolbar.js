@@ -13,7 +13,7 @@ const HeaderToolbar = () => {
         />
       </div>
 
-      {/* Select and buttons */}
+      {/* Select, date pickers, and buttons */}
       <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 w-full md:w-auto">
         
         {/* Dropdown */}
@@ -25,6 +25,19 @@ const HeaderToolbar = () => {
               </option>
             ))}
           </select>
+        </div>
+
+        {/* Date Picker Inputs */}
+        <div className="flex space-x-2 w-full md:w-auto">
+          <input
+            type="date"
+            className="w-full md:w-auto px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          />
+
+          <input
+            type="date"
+            className="w-full md:w-auto px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          />
         </div>
 
         {/* Buttons */}
