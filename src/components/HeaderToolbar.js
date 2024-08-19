@@ -27,26 +27,13 @@ const HeaderToolbar = () => {
           </select>
         </div>
 
-        {/* Date Picker Inputs */}
-        <div className="flex space-x-2 w-full md:w-auto">
-          <input
-            type="date"
-            className="w-full md:w-auto px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-          />
-
-          <input
-            type="date"
-            className="w-full md:w-auto px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-          />
-        </div>
-
         {/* Buttons */}
         <div className="flex space-x-2 w-full md:w-auto justify-center">
-          <button className="px-4 py-2 text-blue-600 bg-blue-100 rounded-md focus:outline-none">
+          <button className="px-4 py-2 text-blue-600 bg-blue-100 rounded-md focus:outline-none text-3xl">
             ⟳
           </button>
 
-          <button className="px-4 py-2 text-white bg-blue-600 rounded-md focus:outline-none">
+          <button className="px-4 py-2 text-white bg-blue-600 rounded-md focus:outline-none text-lg">
             + Add
           </button>
         </div>
@@ -56,4 +43,5 @@ const HeaderToolbar = () => {
 };
 
 export default HeaderToolbar;
+
 
