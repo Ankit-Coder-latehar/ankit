@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTruckLoading, FaRoad, FaFileInvoice, FaTags, FaMapSigns, FaUser, FaChevronDown, FaBars } from 'react-icons/fa';
+import { ClipboardIcon } from '@heroicons/react/24/outline';
+import { FaGavel } from 'react-icons/fa';
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -62,25 +64,41 @@ const Header = () => {
 
       {/* Main menu for larger screens */}
       <div className="hidden md:flex space-x-6">
-        <Link to="/loads" className="flex items-center text-blue-500 hover:text-blue-700">
+        <Link to="/bids" className="flex items-center text-blue-500 hover:text-blue-700">
           <FaTruckLoading className="mr-2" />
-          <span>Loads</span>
+          <span>Bids</span>
         </Link>
-        <Link to="/contracted-lane" className="flex items-center text-gray-700 hover:text-blue-700">
+        <Link to="/vendor" className="flex items-center text-gray-700 hover:text-blue-700">
           <FaRoad className="mr-2" />
-          <span>Contracted Lane</span>
+          <span>Vendor</span>
         </Link>
-        <Link to="/sales-order" className="flex items-center text-gray-700 hover:text-blue-700">
+        <Link to="/staff" className="flex items-center text-gray-700 hover:text-blue-700">
           <FaFileInvoice className="mr-2" />
-          <span>Sales Order</span>
+          <span>Staff</span>
         </Link>
-        <Link to="/purchase-order" className="flex items-center text-gray-700 hover:text-blue-700">
+        <Link to="/branch" className="flex items-center text-gray-700 hover:text-blue-700">
           <FaTags className="mr-2" />
-          <span>Purchase Order</span>
+          <span>Branch</span>
         </Link>
-        <Link to="/trips" className="flex items-center text-gray-700 hover:text-blue-700">
+        <Link to="/pod" className="flex items-center text-gray-700 hover:text-blue-700">
           <FaMapSigns className="mr-2" />
-          <span>Trips</span>
+          <span>POD</span>
+        </Link>
+        <Link to="/fastag-tracking" className="flex items-center text-gray-700 hover:text-blue-700">
+          <FaMapSigns className="mr-2" />
+          <span>Fastag Tracking</span>
+        </Link>
+        <Link to="/vahan" className="flex items-center text-gray-700 hover:text-blue-700">
+          <FaMapSigns className="mr-2" />
+          <span>Vahan</span>
+        </Link>
+        <Link to="/saarthi" className="flex items-center text-gray-700 hover:text-blue-700">
+          <FaMapSigns className="mr-2" />
+          <span>Saarthi</span>
+        </Link>
+        <Link to="/wallet" className="flex items-center text-gray-700 hover:text-blue-700">
+          <FaMapSigns className="mr-2" />
+          <span>Wallet</span>
         </Link>
         <div className="relative">
           <button onClick={toggleDropdown} className="flex items-center text-blue-500 hover:text-blue-700 focus:outline-none">
@@ -117,25 +135,41 @@ const Header = () => {
           <h1 className="text-xl font-bold">Menu</h1>
           <FaBars className="text-blue-500 hover:text-blue-700 cursor-pointer" onClick={toggleMenu} />
         </div>
-        <Link to="/loads" className="block mb-4 text-blue-500 hover:text-blue-700">
-          <FaTruckLoading className="mr-2 inline" />
-          <span>Loads</span>
+        <Link to="/bids" className="block mb-4 text-blue-500 hover:text-blue-700">
+        <FaGavel className="mr-2 inline" /> {/* Replace FaTruckLoading with FaGavel */}
+        <span>Bids</span>
         </Link>
-        <Link to="/contracted-lane" className="block mb-4 text-gray-700 hover:text-blue-700">
+        <Link to="/vendor" className="block mb-4 text-gray-700 hover:text-blue-700">
           <FaRoad className="mr-2 inline" />
-          <span>Contracted Lane</span>
+          <span>Vendor</span>
         </Link>
-        <Link to="/sales-order" className="block mb-4 text-gray-700 hover:text-blue-700">
+        <Link to="/staff" className="block mb-4 text-gray-700 hover:text-blue-700">
           <FaFileInvoice className="mr-2 inline" />
-          <span>Sales Order</span>
+          <span>Staff</span>
         </Link>
-        <Link to="/purchase-order" className="block mb-4 text-gray-700 hover:text-blue-700">
+        <Link to="/branch" className="block mb-4 text-gray-700 hover:text-blue-700">
           <FaTags className="mr-2 inline" />
-          <span>Purchase Order</span>
+          <span>Branch</span>
         </Link>
-        <Link to="/trips" className="block mb-4 text-gray-700 hover:text-blue-700">
+        <Link to="/pod" className="block mb-4 text-gray-700 hover:text-blue-700">
+          <ClipboardIcon className="mr-2 inline" />
+          <span>POD</span>
+        </Link>
+        <Link to="/fastag-tracking" className="block mb-4 text-gray-700 hover:text-blue-700">
           <FaMapSigns className="mr-2 inline" />
-          <span>Trips</span>
+          <span>Fastag Tracking</span>
+        </Link>
+        <Link to="/vahan" className="block mb-4 text-gray-700 hover:text-blue-700">
+          <FaMapSigns className="mr-2 inline" />
+          <span>Vahan</span>
+        </Link>
+        <Link to="/Saarthi" className="block mb-4 text-gray-700 hover:text-blue-700">
+          <FaMapSigns className="mr-2 inline" />
+          <span>Saarthi</span>
+        </Link>
+        <Link to="/wallet" className="block mb-4 text-gray-700 hover:text-blue-700">
+          <FaMapSigns className="mr-2 inline" />
+          <span>Wallet</span>
         </Link>
       </div>
     </div>

@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { FunnelIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
-const TabSection = () => {
+const TabSection = ({ contractCardCount }) => {
   const [activeTab, setActiveTab] = useState('Live');
   const [filterVisible, setFilterVisible] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState('ID');
 
   const tabs = [
-    { name: 'Live', count: 3 },
-    { name: 'Result', count: 0 },
-    { name: 'History', count: 4 },
-    { name: 'Counter', count: 1 },
-    { name: 'Cancelled', count: 0 },
+    { name: 'Live', count: 3, to: '/live' },
+    { name: 'Result', count: contractCardCount, to: '/result' },
+    { name: 'History', count: contractCardCount, to: '/history' },
+    { name: 'Counter', count: contractCardCount, to: '/counter' },
+    { name: 'Cancelled', count: contractCardCount, to: '/cancelled' }, // Use the passed count
   ];
 
   const filters = [
@@ -26,7 +27,6 @@ const TabSection = () => {
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter);
     setFilterVisible(false);
-    // Implement the actual filtering logic here
     console.log(`Filtering by: ${filter}`);
   };
 
@@ -35,8 +35,9 @@ const TabSection = () => {
       <div className="flex items-center justify-between px-4 py-2 bg-white border-b">
         <div className="flex space-x-4">
           {tabs.map((tab) => (
-            <button
+            <Link
               key={tab.name}
+              to={tab.to}
               onClick={() => setActiveTab(tab.name)}
               className={`text-sm font-medium focus:outline-none pb-2 ${
                 activeTab === tab.name
@@ -45,7 +46,7 @@ const TabSection = () => {
               }`}
             >
               {tab.name} ({tab.count})
-            </button>
+            </Link>
           ))}
         </div>
         <div className="flex space-x-2">
@@ -77,7 +78,6 @@ const TabSection = () => {
           </button>
         </div>
       </div>
-      {/* Display the selected filter option */}
       <div className="px-4 py-2 text-sm text-gray-700">
         Current Filter: <span className="font-semibold">{selectedFilter}</span>
       </div>
@@ -86,4 +86,5 @@ const TabSection = () => {
 };
 
 export default TabSection;
+
 
