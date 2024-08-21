@@ -6,8 +6,8 @@ import ContractCard from '../components/Dashboard/ContractedLane';
 import TableHeader from '../components/Dashboard/TableHeader';
 
 const History = () => {
-  // Determine the number of ContractCard components to display
-  const contractCardCount = 4; // Adjust this count as needed
+  
+  const contractCardCount = 4;
 
   return (
     <div className='absolute top-0 left-0 w-full h-full m-0 p-0 bg-white'>
