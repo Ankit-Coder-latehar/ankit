@@ -84,31 +84,6 @@ const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
   );
 };
 
-// const TableHeader = () => {
-//   return (
-//     <div className="hidden md:grid grid-cols-12 bg-gray-100 p-2 rounded-t-lg">
-//       <div className="col-span-1 flex items-center space-x-1">
-//         <span className="text-sm font-medium text-gray-700">ID</span>
-//         <ChevronDownIcon className="h-4 w-4 text-gray-500" />
-//       </div>
-//       <div className="col-span-1 flex items-center">
-//         <span className="text-sm right-font-medium text-gray-700 font-semibold">Loading Date</span>
-//       </div>
-//       <div className="col-span-2 flex items-center">
-//         <span className="text-sm font-medium text-gray-700">Loading Point</span>
-//       </div>
-//       <div className="col-span-2 flex items-center">
-//         <span className="text-sm font-medium text-gray-700">Unloading Point</span>
-//       </div>
-//       <div className="col-span-2 flex items-center">
-//         <span className="text-sm font-medium text-gray-700">Details</span>
-//       </div>
-//       <div className="col-span-1 flex items-center justify-center">
-//         <span className="text-sm font-medium text-gray-700">Best Quote</span>
-//       </div>
-//     </div>
-//   );
-// };
 
 const ContractCard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -149,14 +124,11 @@ const ContractCard = () => {
 
   return (
     <>
-      {/* TableHeader is hidden on mobile devices */}
-      {/* <TableHeader /> */}
+    
 
-      {/* Mobile view card - visible on mobile devices only */}
       <div className="md:hidden bg-blue-50 rounded-b-lg p-4 shadow-sm mt-3 relative border border-gray-300 rounded-lg mx-4">
         <div className="grid grid-cols-12 gap-2">
-          {/* Mobile content */}
-          {/* ... (the same mobile content as before) */}
+         
         </div>
       </div>
 
@@ -223,7 +195,7 @@ const ContractCard = () => {
         </div>
       </div>
 
-      {/* Include the modal */}
+     
       <QuotesModal showModal={showModal} setShowModal={setShowModal} />
       <VendorsModal showVendorsModal={showVendorsModal} setShowVendorsModal={setShowVendorsModal} vendors={vendors} />
 
