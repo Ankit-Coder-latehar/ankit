@@ -59,7 +59,7 @@ const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
         <h2 className="text-xl font-semibold text-gray-800 flex-1 text-right">Response</h2>
       </div>
   
-      <div className="space-y-4">
+      <div className="max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         {vendors.map((vendor, index) => (
           <div key={index} className="flex justify-between items-center p-4 border rounded-md">
             <span className="text-gray-800 font-medium flex-1">{vendor.name}</span>
@@ -70,18 +70,13 @@ const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
                 ) : (
                   <EyeIcon className="h-5 w-5 text-red-500" />
                 )}
-               
               </div>
             </div>
             <div className="flex items-center space-x-1 flex-1 justify-end">
               {vendor.responded ? (
-                <>
-                  <CheckIcon className="h-5 w-5 text-green-500" />
-                </>
+                <CheckIcon className="h-5 w-5 text-green-500" />
               ) : (
-                <>
-                  <XMarkIcon className="h-5 w-5 text-red-500" />
-                </>
+                <XMarkIcon className="h-5 w-5 text-red-500" />
               )}
             </div>
           </div>
@@ -89,6 +84,7 @@ const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
       </div>
     </div>
   </div>
+  
   
 
   );
@@ -103,6 +99,9 @@ const ContractCard = () => {
     { name: 'Vendor 1', viewed: true, responded: true },
     { name: 'Vendor 2', viewed: true, responded: false },
     { name: 'Vendor 3', viewed: false, responded: false },
+    { name: 'Vendor 4', viewed: true, responded: true },
+    { name: 'Vendor 5', viewed: true, responded: true },
+
   ];
 
   const handleDownload = () => {
