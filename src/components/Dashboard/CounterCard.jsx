@@ -7,8 +7,8 @@ const QuotesModal = ({ showModal, setShowModal }) => {
       { name: 'Vendor 1', rate: 'Rs 80,000' },
       { name: 'Vendor 2', rate: 'Rs 82,000' },
       { name: 'Vendor 3', rate: 'Rs 85,000' },
-      { name: 'Vendor 4', rate: 'Rs 90,000' }, // Extra vendors
-      { name: 'Vendor 5', rate: 'Rs 92,000' }, // Extra vendors
+      { name: 'Vendor 4', rate: 'Rs 90,000' }, 
+      { name: 'Vendor 5', rate: 'Rs 92,000' }, 
     ];
   
     if (!showModal) return null;
@@ -24,7 +24,7 @@ const QuotesModal = ({ showModal, setShowModal }) => {
           </button>
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Vendor Quotes</h2>
   
-          {/* Vendor list container with max height and scrollbar */}
+         
           <div className="max-h-60 overflow-y-auto space-y-4">
             {vendors.map((vendor, index) => (
               <div key={index} className="flex justify-between items-center p-4 border rounded-md">
@@ -42,7 +42,7 @@ const QuotesModal = ({ showModal, setShowModal }) => {
     );
   };
 
-// Modal Component for Assigned Vendors
+
 const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
   if (!showVendorsModal) return null;
 
@@ -86,31 +86,7 @@ const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
   );
 };
 
-// const TableHeader = () => {
-//   return (
-//     <div className="hidden md:grid grid-cols-12 bg-gray-100 p-2 rounded-t-lg">
-//       <div className="col-span-1 flex items-center space-x-1">
-//         <span className="text-sm font-medium text-gray-700">ID</span>
-//         <ChevronDownIcon className="h-4 w-4 text-gray-500" />
-//       </div>
-//       <div className="col-span-1 flex items-center">
-//         <span className="text-sm right-font-medium text-gray-700 font-semibold">Loading Date</span>
-//       </div>
-//       <div className="col-span-2 flex items-center">
-//         <span className="text-sm font-medium text-gray-700">Loading Point</span>
-//       </div>
-//       <div className="col-span-2 flex items-center">
-//         <span className="text-sm font-medium text-gray-700">Unloading Point</span>
-//       </div>
-//       <div className="col-span-2 flex items-center">
-//         <span className="text-sm font-medium text-gray-700">Details</span>
-//       </div>
-//       <div className="col-span-1 flex items-center justify-center">
-//         <span className="text-sm font-medium text-gray-700">Best Quote</span>
-//       </div>
-//     </div>
-//   );
-// };
+
 
 const CounterCard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -151,8 +127,7 @@ const CounterCard = () => {
 
   return (
     <>
-      {/* TableHeader is hidden on mobile devices */}
-      {/* <TableHeader /> */}
+      
 
       {/* Mobile view card - visible on mobile devices only */}
       <div className="md:hidden bg-blue-50 rounded-b-lg p-4 shadow-sm mt-3 relative border border-gray-300 rounded-lg mx-4">

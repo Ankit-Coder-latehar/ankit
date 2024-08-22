@@ -46,8 +46,8 @@ const QuotesModal = ({ showModal, setShowModal }) => {
       { name: 'Vehicle No.', rate: 'Action' },
       { name: 'JH45R4567', rate: 'Action' },
       { name: 'Gj03R6798', rate: 'Action' },
-      { name: 'MH90Y3456', rate: 'Action' }, // Extra vendors
-      { name: 'KL56Y7834', rate: 'Action' }, // Extra vendors
+      { name: 'MH90Y3456', rate: 'Action' }, 
+      { name: 'KL56Y7834', rate: 'Action' }, 
     ];
   
     if (!showVehicleModal) return null;

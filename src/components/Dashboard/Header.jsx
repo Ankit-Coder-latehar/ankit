@@ -107,7 +107,7 @@ const Header = () => {
             <FaChevronDown className="ml-1" />
           </button>
 
-          {/* Dropdown menu */}
+         
           {dropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg">
               <Link
@@ -128,15 +128,13 @@ const Header = () => {
           )}
         </div>
       </div>
-
-      {/* Sliding menu for small screens */}
       <div className={`fixed top-0 right-0 h-full bg-white shadow-lg z-50 transition-transform transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden p-10`}>
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-xl font-bold">Menu</h1>
           <FaBars className="text-blue-500 hover:text-blue-700 cursor-pointer" onClick={toggleMenu} />
         </div>
         <Link to="/bids" className="block mb-4 text-blue-500 hover:text-blue-700">
-        <FaGavel className="mr-2 inline" /> {/* Replace FaTruckLoading with FaGavel */}
+        <FaGavel className="mr-2 inline" /> 
         <span>Bids</span>
         </Link>
         <Link to="/vendor" className="block mb-4 text-gray-700 hover:text-blue-700">
