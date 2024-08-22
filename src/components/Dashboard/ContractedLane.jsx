@@ -134,14 +134,11 @@ const ContractCard = () => {
 
   return (
     <>
-      {/* TableHeader is hidden on mobile devices */}
-      {/* <TableHeader /> */}
+    
 
-      {/* Mobile view card - visible on mobile devices only */}
       <div className="md:hidden bg-blue-50 rounded-b-lg p-4 shadow-sm mt-3 relative border border-gray-300 rounded-lg mx-4">
         <div className="grid grid-cols-12 gap-2">
-          {/* Mobile content */}
-          {/* ... (the same mobile content as before) */}
+         
         </div>
       </div>
 
@@ -212,7 +209,7 @@ const ContractCard = () => {
         </div>
       </div>
 
-      {/* Include the modal */}
+     
       <QuotesModal showModal={showModal} setShowModal={setShowModal} />
       <VendorsModal showVendorsModal={showVendorsModal} setShowVendorsModal={setShowVendorsModal} vendors={vendors} />
 
