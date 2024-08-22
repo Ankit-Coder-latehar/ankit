@@ -9,10 +9,10 @@ const TabSection = ({ contractCardCount }) => {
 
   const tabs = [
     { name: 'Live', count: 3, to: '/live' },
-    { name: 'Result', count: contractCardCount, to: '/result' },
-    { name: 'History', count: contractCardCount, to: '/history' },
-    { name: 'Counter', count: contractCardCount, to: '/counter' },
-    { name: 'Cancelled', count: contractCardCount, to: '/cancelled' }, // Use the passed count
+    { name: 'Result', count: 1, to: '/result' },
+    { name: 'History', count: 1, to: '/history' },
+    { name: 'Counter', count: 1, to: '/counter' },
+    { name: 'Cancelled', count: 3, to: '/cancelled' }, 
   ];
 
   const filters = [

@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../components/Dashboard/Header';
-import HeaderToolbar from '../components/Dashboard/HeaderToolbar';
-import TabSection from '../components/Dashboard/TabSection';
-import ContractCard from '../components/Dashboard/ContractedLane';
-import TableHeader from '../components/Dashboard/TableHeader';
+import Header from '../../components/Dashboard/Header';
+import HeaderToolbar from '../../components/Dashboard/HeaderToolbar';
+import TabSection from '../../components/Dashboard/TabSection';
+import ContractCard from '../../components/Dashboard/ContractedLane';
+import TableHeader from '../../components/Dashboard/TableHeader';
 
-const Cancelled = () => {
+const Live = () => {
   // Determine the number of ContractCard components to display
-  const contractCardCount = 3; // You can adjust this count as needed
+  const contractCardCount = 4; // Adjust this count as needed
 
   return (
     <div className='absolute top-0 left-0 w-full h-full m-0 p-0 bg-white'>
@@ -22,4 +22,4 @@ const Cancelled = () => {
   );
 };
 
-export default Cancelled;
+export default Live;

@@ -2,34 +2,81 @@ import React, { useState } from 'react';
 import { ChevronDownIcon, EnvelopeIcon, PrinterIcon,EyeIcon,CheckIcon, XMarkIcon, PencilIcon } from '@heroicons/react/24/outline';
 
 
-// Modal Component
 const QuotesModal = ({ showModal, setShowModal }) => {
-  const vendors = [
-    { name: 'Vendor 1', rate: 'Rs 80,000' },
-    { name: 'Vendor 2', rate: 'Rs 82,000' },
-    { name: 'Vendor 3', rate: 'Rs 85,000' },
-  ];
+    const vendors = [
+      { name: 'Vendor 1', rate: 'Rs 80,000' },
+      { name: 'Vendor 2', rate: 'Rs 82,000' },
+      { name: 'Vendor 3', rate: 'Rs 85,000' },
+      { name: 'Vendor 4', rate: 'Rs 90,000' }, // Extra vendors
+      { name: 'Vendor 5', rate: 'Rs 92,000' }, // Extra vendors
+    ];
+  
+    if (!showModal) return null;
+  
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
+        <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 p-6 relative">
+          <button
+            className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            onClick={() => setShowModal(false)}
+          >
+            <XMarkIcon className="h-6 w-6" />
+          </button>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Vendor Quotes</h2>
+  
+          {/* Vendor list container with max height and scrollbar */}
+          <div className="max-h-60 overflow-y-auto space-y-4">
+            {vendors.map((vendor, index) => (
+              <div key={index} className="flex justify-between items-center p-4 border rounded-md">
+                <span className="text-gray-800 font-medium">{vendor.name}</span>
+                <span className="text-gray-800">{vendor.rate}</span>
+                <div className="space-x-2">
+                  <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm">Counter</button>
+                  <button className="bg-green-500 text-white px-4 py-2 rounded-md text-sm">Assign Bid</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
-  if (!showModal) return null;
+// Modal Component for Assigned Vendors
+const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
+  if (!showVendorsModal) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 p-6 relative">
         <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-          onClick={() => setShowModal(false)}
+          onClick={() => setShowVendorsModal(false)}
         >
           <XMarkIcon className="h-6 w-6" />
         </button>
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Vendor Quotes</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mb-4">Assigned Vendors</h2>
         <div className="space-y-4">
           {vendors.map((vendor, index) => (
             <div key={index} className="flex justify-between items-center p-4 border rounded-md">
               <span className="text-gray-800 font-medium">{vendor.name}</span>
-              <span className="text-gray-800">{vendor.rate}</span>
-              <div className="space-x-2">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm">Counter</button>
-                <button className="bg-green-500 text-white px-4 py-2 rounded-md text-sm">Assign Bid</button>
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-1">
+                  {vendor.viewed ? (
+                    <EyeIcon className="h-5 w-5 text-green-500" />
+                  ) : (
+                    <EyeIcon className="h-5 w-5 text-red-500 line-through" />
+                  )}
+                  <span>Viewed</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  {vendor.responded ? (
+                    <CheckIcon className="h-5 w-5 text-green-500" />
+                  ) : (
+                    <CheckIcon className="h-5 w-5 text-red-500 line-through" />
+                  )}
+                  <span>Responded</span>
+                </div>
               </div>
             </div>
           ))}
@@ -39,63 +86,33 @@ const QuotesModal = ({ showModal, setShowModal }) => {
   );
 };
 
+// const TableHeader = () => {
+//   return (
+//     <div className="hidden md:grid grid-cols-12 bg-gray-100 p-2 rounded-t-lg">
+//       <div className="col-span-1 flex items-center space-x-1">
+//         <span className="text-sm font-medium text-gray-700">ID</span>
+//         <ChevronDownIcon className="h-4 w-4 text-gray-500" />
+//       </div>
+//       <div className="col-span-1 flex items-center">
+//         <span className="text-sm right-font-medium text-gray-700 font-semibold">Loading Date</span>
+//       </div>
+//       <div className="col-span-2 flex items-center">
+//         <span className="text-sm font-medium text-gray-700">Loading Point</span>
+//       </div>
+//       <div className="col-span-2 flex items-center">
+//         <span className="text-sm font-medium text-gray-700">Unloading Point</span>
+//       </div>
+//       <div className="col-span-2 flex items-center">
+//         <span className="text-sm font-medium text-gray-700">Details</span>
+//       </div>
+//       <div className="col-span-1 flex items-center justify-center">
+//         <span className="text-sm font-medium text-gray-700">Best Quote</span>
+//       </div>
+//     </div>
+//   );
+// };
 
-// Modal Component for Assigned Vendors
-const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
-  if (!showVendorsModal) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
-    <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 p-6 relative">
-      <button
-        className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-        onClick={() => setShowVendorsModal(false)}
-      >
-        <XMarkIcon className="h-6 w-6" />
-      </button>
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-800 flex-1">Assigned Vendors</h2>
-        <h2 className="text-xl font-semibold text-gray-800 flex-1 text-center">Viewed</h2>
-        <h2 className="text-xl font-semibold text-gray-800 flex-1 text-right">Response</h2>
-      </div>
-  
-      <div className="space-y-4">
-        {vendors.map((vendor, index) => (
-          <div key={index} className="flex justify-between items-center p-4 border rounded-md">
-            <span className="text-gray-800 font-medium flex-1">{vendor.name}</span>
-            <div className="flex items-center space-x-4 flex-1 justify-center">
-              <div className="flex items-center space-x-1">
-                {vendor.viewed ? (
-                  <EyeIcon className="h-5 w-5 text-green-500" />
-                ) : (
-                  <EyeIcon className="h-5 w-5 text-red-500" />
-                )}
-               
-              </div>
-            </div>
-            <div className="flex items-center space-x-1 flex-1 justify-end">
-              {vendor.responded ? (
-                <>
-                  <CheckIcon className="h-5 w-5 text-green-500" />
-                </>
-              ) : (
-                <>
-                  <XMarkIcon className="h-5 w-5 text-red-500" />
-                </>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-  
-
-  );
-};
-
-
-const ContractCard = () => {
+const CounterCard = () => {
   const [showModal, setShowModal] = useState(false);
   const [showVendorsModal, setShowVendorsModal] = useState(false);
 
@@ -148,15 +165,14 @@ const ContractCard = () => {
       <div className="hidden md:block bg-blue-50 rounded-b-lg p-4 shadow-sm mt-3 relative">
         <div className="grid grid-cols-12 gap-3 md:gap-4">
           <div className="col-span-12 md:col-span-1">
-          <span className="block text-black font-semibold">Qiktrack</span>
+            <span className="block text-grey-600 font-semibold">Qikbuk</span>
             <span className="block text-blue-600 font-semibold">#2345677</span>
-            <span className="block text-red-600">2d 14hr 45min</span>
             <div className="block text-grey-500 mt-12">Remarks</div>
           </div>
 
           <div className="col-span-7 md:col-span-1">
-            <span className="block font-medium ml-2">8th July 2024</span>
-            <span className="block ml-2">8:00 AM</span>
+            <span className="block font-medium">8th July 2024</span>
+            <span className="block">8:00 AM</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
@@ -174,24 +190,28 @@ const ContractCard = () => {
             <span className="block">Vehicle Type - 1</span>
             <span className="block">Equipments</span>
             <a href="#" className="text-blue-600">Distance - 1500 Km</a>
+           
           </div>
 
           <div className="col-span-12 md:col-span-1 flex flex-col items-center justify-center relative">
-            <div className="text-lg font-semibold text-gray-700">Rs 85,000</div>
-            <button
-              className="text-blue-600 text-sm mr-[-10px]"
+            <div className="text-lg font-semibold text-gray-700 ml-5">Counter(46)</div>
+
+           <div>
+            <span className='ml-4'></span>
+           <button
+              className="text-blue-600 text-sm ml-5"
               onClick={() => setShowModal(true)}
             >
-              View all quotes
+          
             </button>
-            <button onClick={() => setShowVendorsModal(true)} className="mt-10 bg-blue-600 text-white px-3 py-1.5 mr-[-50px] text-sm rounded whitespace-nowrap">
-              Assigned Vendors(34)
+            </div> 
+            <button onClick={() => setShowModal(true)} className="mt-10 bg-blue-600 text-white px-3 py-1.5 mr-[-50px] text-sm rounded whitespace-nowrap">
+              Counter info(2)
             </button>
 
             <div className="absolute top-0 right-[-100px] mt-1 mr-1 flex space-x-2">
               <EnvelopeIcon className="h-5 w-5 text-blue-600" />
               <PrinterIcon className="h-5 w-5 text-blue-600 cursor-pointer" onClick={handleDownload} />
-              <PencilIcon className="h-5 w-5 text-blue-600 cursor-pointer" />
             </div>
           </div>
         </div>
@@ -203,9 +223,6 @@ const ContractCard = () => {
               Assigned Staff(Staff Name, +918778489889)
             </span>
           </span>
-          <button  className="mt-3 bg-blue-600 text-white px-3 py-1.5 mr-[-7px] text-sm rounded whitespace-nowrap">
-            Vehicle Info
-            </button>
           <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
             <span>( 08/08/2024 ,  8:00PM)</span>
           </div>
@@ -220,4 +237,4 @@ const ContractCard = () => {
   );
 };
 
-export default ContractCard;
+export default CounterCard;
