@@ -9,13 +9,13 @@ const TableHeader = () => {
         <ChevronDownIcon className="h-4 w-4 text-gray-500" />
       </div>
       <div className="col-span-1 flex items-center">
-        <span className="text-sm right-font-medium text-gray-700 font-semibold ml-4">Loading Date</span>
+        <span className="text-sm right-font-medium text-gray-700 font-semibold ml-9">Loading Date</span>
       </div>
       <div className="col-span-2 flex items-center">
-        <span className="text-sm font-medium text-gray-700 ml-14">Loading Point</span>
+        <span className="text-sm font-medium text-gray-700 ml-20">Loading Point</span>
       </div>
       <div className="col-span-2 flex items-center">
-        <span className="text-sm font-medium text-gray-700">Unloading Point</span>
+        <span className="text-sm font-medium text-gray-700 ml-10">Unloading Point</span>
       </div>
       <div className="col-span-2 flex items-center">
         <span className="text-sm font-medium text-gray-700">Details</span>

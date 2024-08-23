@@ -250,9 +250,9 @@ const ResultCard = () => {
 
           <div className="col-span-12 md:col-span-1 flex flex-col items-center justify-center relative">
             <div className="text-lg font-semibold text-gray-700"></div>
-
+            <span className='ml-2 '>Rs 90000</span>
            <div>
-            <span className='ml-4'>Vendor</span>
+            <span className='ml-6'>Vendor</span>
            <button
               className="text-blue-600 text-sm ml-5"
               onClick={() => setShowVendorDetailsModal(true)}
@@ -260,9 +260,7 @@ const ResultCard = () => {
              (vendor info)
             </button>
             </div> 
-            <button onClick={() => setShowModal(true)} className="mt-10 bg-blue-600 text-white px-3 py-1.5 mr-[-10px] text-sm rounded whitespace-nowrap">
-            Responses
-            </button>
+            
 
             <div className="absolute top-0 right-[-100px] mt-1 mr-1 flex space-x-2">
               <EnvelopeIcon className="h-5 w-5 text-blue-600" />
@@ -278,8 +276,11 @@ const ResultCard = () => {
               Assigned Staff(Staff Name, +918778489889)
             </span>
           </span>
-          <button onClick={()=>setShowVehicleModal(true)} className="mt-2 bg-blue-600 text-white px-3 py-1.5 mr-[-7px] text-sm rounded whitespace-nowrap">
+          <button onClick={()=>setShowVehicleModal(true)} className="mt-2 ml-10  text-blue-500 px-3 py-1.5 mr-[-180px] text-sm rounded whitespace-nowrap">
             Vehicle Info
+            </button>
+            <button onClick={() => setShowModal(true)} className="mt-3   ml-10 text-blue-500 px-3 py-1.5 mr-[-180px] text-sm rounded whitespace-nowrap">
+            Responses
             </button>
           <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
             <span>( 08/08/2024 ,  8:00PM)</span>

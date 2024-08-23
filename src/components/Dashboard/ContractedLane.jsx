@@ -4,41 +4,109 @@ import { ChevronDownIcon, EnvelopeIcon, PrinterIcon,EyeIcon,CheckIcon, XMarkIcon
 
 // Modal Component
 const QuotesModal = ({ showModal, setShowModal }) => {
-  const vendors = [
-    { name: 'Vendor 1', rate: 'Rs 80,000' },
-    { name: 'Vendor 2', rate: 'Rs 82,000' },
-    { name: 'Vendor 3', rate: 'Rs 85,000' },
+  const quotes = [
+    {
+      transporter: 'Transporter A',
+      level: 'L1',
+      amount: '₹ 25000',
+      details: 'FTL (Offline)',
+      note: 'Transporter could/did not participate in auction',
+    },
+    {
+      transporter: 'Transporter B',
+      level: 'L2',
+      amount: '₹ 27000 >> ₹ 25500 >> ₹ 25200',
+      details: 'FTL (Offline)',
+      note: 'Renegotiated',
+    },
+    {
+      transporter: 'Transporter C',
+      level: 'L3',
+      amount: '₹ 28000 >> ₹ 25700 >> ₹ 25200',
+      details: 'FTL (Offline)',
+      note: 'Renegotiated',
+    },
+    {
+      transporter: 'Transporter D',
+      level: 'L4',
+      amount: '₹ 29000 >> ₹ 28500 >> ₹ 28000',
+      details: 'FTL (Offline)',
+      note: 'Renegotiated',
+    },
+    {
+      transporter: 'Transporter E',
+      level: 'L5',
+      amount: '₹ 35000 >> ₹ 31000',
+      details: 'FTL (Offline)',
+      note: 'Renegotiated',
+    },
   ];
 
   if (!showModal) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 p-6 relative">
+      <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-3/4 p-6 relative">
         <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
           onClick={() => setShowModal(false)}
         >
-          <XMarkIcon className="h-6 w-6" />
         </button>
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Vendor Quotes</h2>
-        <div className="space-y-4">
-          {vendors.map((vendor, index) => (
-            <div key={index} className="flex justify-between items-center p-4 border rounded-md">
-              <span className="text-gray-800 font-medium">{vendor.name}</span>
-              <span className="text-gray-800">{vendor.rate}</span>
-              <div className="space-x-2">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm">Counter</button>
-                <button className="bg-green-500 text-white px-4 py-2 rounded-md text-sm">Assign Bid</button>
-              </div>
+        <div className="bg-blue-700 text-white p-4 rounded-t-lg flex items-center justify-between">
+          <h2 className="text-lg">#7102687</h2>
+          <button
+            className="text-white"
+            onClick={() => setShowModal(false)}
+          >
+            <XMarkIcon className="h-6 w-6" />
+          </button>
+        </div>
+        <div className="border-b p-4">
+          <div className="flex justify-between text-gray-600">
+            <div>
+              <p className="text-sm font-medium">ID</p>
+              <p className="text-sm">7102687</p>
             </div>
-          ))}
+            <div>
+              <p className="text-sm font-medium">Date</p>
+              <p className="text-sm">5th Jul 8:00 AM</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium">Loading</p>
+              <p className="text-sm">● Plant 1</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium">Unloading</p>
+              <p className="text-sm">● Customer 11, Mumbai(CU...)</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium">Details</p>
+              <p className="text-sm">Vehicle Required: 1<br/>Vehicle Type: 1<br/>Qty/Vehicle: 15 MT</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium">Status</p>
+              <p className="text-sm text-red-500">Cancelled</p>
+            </div>
+          </div>
+        </div>
+        <div className="p-4">
+          <h3 className="text-gray-800 font-medium mb-2">Quote history</h3>
+          <div className="space-y-2">
+            {quotes.map((quote, index) => (
+              <div key={index} className="text-gray-600">
+                <p className="font-medium">{quote.transporter}</p>
+                <p className="text-sm">
+                  {quote.level} &nbsp; {quote.amount} &nbsp; {quote.details}
+                </p>
+                <p className="text-xs italic text-gray-500">{quote.note}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 };
-
 
 // Modal Component for Assigned Vendors
 const VendorsModal = ({ showVendorsModal, setShowVendorsModal, vendors }) => {
@@ -199,9 +267,6 @@ const ContractCard = () => {
               Assigned Staff(Staff Name, +918778489889)
             </span>
           </span>
-          <button  className="mt-3 bg-blue-600 text-white px-3 py-1.5 mr-[-7px] text-sm rounded whitespace-nowrap">
-            Vehicle Info
-            </button>
           <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
             <span>( 08/08/2024 ,  8:00PM)</span>
           </div>
