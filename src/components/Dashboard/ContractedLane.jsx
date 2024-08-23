@@ -249,9 +249,7 @@ const ContractCard = () => {
             >
               View all quotes
             </button>
-            <button onClick={() => setShowVendorsModal(true)} className="mt-10 bg-blue-600 text-white px-3 py-1.5 mr-[-50px] text-sm rounded whitespace-nowrap">
-              Assigned Vendors(34)
-            </button>
+    
 
             <div className="absolute top-0 right-[-100px] mt-1 mr-1 flex space-x-2">
               <EnvelopeIcon className="h-5 w-5 text-blue-600" />
@@ -268,6 +266,9 @@ const ContractCard = () => {
               Assigned Staff(Staff Name, +918778489889)
             </span>
           </span>
+          <button onClick={() => setShowVendorsModal(true)} className="mt-2  text-blue-500 px-3 py-1.5 mr-[-50px] text-sm rounded whitespace-nowrap">
+              Assigned Vendors
+            </button>
           <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
             <span>( 08/08/2024 ,  8:00PM)</span>
           </div>
