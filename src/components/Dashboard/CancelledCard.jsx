@@ -139,14 +139,14 @@ const CancelledCard = () => {
             <div className="block text-grey-500 mt-12">Remarks</div>
           </div>
 
-          <div className="col-span-7 md:col-span-1">
-            <span className="block font-medium">8th July 2024</span>
-            <span className="block">8:00 AM</span>
+          <div className="col-span-6 md:col-span-2">
+            <span className="block font-medium ml-6">8th July 2024</span>
+            <span className="block ml-6">8:00 AM</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
-            <span className="block font-medium ml-10">Delhi, Plant 1</span>
-            <span className="block text-xs text-gray-500 ml-10">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
+            <span className="block font-medium ml-4">Delhi, Plant 1</span>
+            <span className="block text-xs text-gray-500 ml-4">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
@@ -154,17 +154,16 @@ const CancelledCard = () => {
             <span className="block text-xs text-gray-500">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
           </div>
 
-          <div className="col-span-12 md:col-span-2">
+          <div className="col-span-12 md:col-span-2 ml-9">
             <span className="block">Vehicle Required - 1</span>
             <span className="block">Vehicle Type - 1</span>
             <span className="block">Equipments</span>
             <a href="#" className="text-blue-600">Distance - 1500 Km</a>
           </div>
-
-          <div className="col-span-12 md:col-span-1 flex flex-col items-center justify-center relative">
-            <div className="text-lg font-semibold text-gray-700">Rs 85,000</div>
+          <div className="col-span-12 md:col-span-2 flex flex-col items-center justify-center relative ml-9">
+            <div className="text-lg font-semibold text-gray-700 mr-5 mt-[-40px]">Rs 85,000</div>
             <button
-              className="text-blue-600 text-sm mr-[-10px]"
+              className="text-blue-600 text-sm mr-[-5px]"
               onClick={() => setShowModal(true)}
             >
               View all quotes
@@ -198,143 +197,6 @@ const CancelledCard = () => {
       <QuotesModal showModal={showModal} setShowModal={setShowModal} />
       <VendorsModal showVendorsModal={showVendorsModal} setShowVendorsModal={setShowVendorsModal} vendors={vendors} />
 
-      <div className="hidden md:block bg-blue-50 rounded-b-lg p-4 shadow-sm mt-3 relative">
-        <div className="grid grid-cols-12 gap-3 md:gap-4">
-          <div className="col-span-12 md:col-span-1">
-          <span className="block text-black font-semibold">Qiktrack</span>
-            <span className="block text-blue-600 font-semibold">#2345677</span>
-            <span className="block text-red-600">2d 14hr 45min</span>
-            <div className="block text-grey-500 mt-12">Remarks</div>
-          </div>
-
-          <div className="col-span-7 md:col-span-1">
-            <span className="block font-medium">8th July 2024</span>
-            <span className="block">8:00 AM</span>
-          </div>
-
-          <div className="col-span-12 md:col-span-2">
-            <span className="block font-medium ml-10">Delhi, Plant 1</span>
-            <span className="block text-xs text-gray-500 ml-10">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
-          </div>
-
-          <div className="col-span-12 md:col-span-2">
-            <span className="block font-medium">Kolkata, West Bengal</span>
-            <span className="block text-xs text-gray-500">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
-          </div>
-
-          <div className="col-span-12 md:col-span-2">
-            <span className="block">Vehicle Required - 1</span>
-            <span className="block">Vehicle Type - 1</span>
-            <span className="block">Equipments</span>
-            <a href="#" className="text-blue-600">Distance - 1500 Km</a>
-          </div>
-
-          <div className="col-span-12 md:col-span-1 flex flex-col items-center justify-center relative">
-            <div className="text-lg font-semibold text-gray-700">Rs 85,000</div>
-            <button
-              className="text-blue-600 text-sm mr-[-10px]"
-              onClick={() => setShowModal(true)}
-            >
-              View all quotes
-            </button>
-
-            <div className="absolute top-0 right-[-100px] mt-1 mr-1 flex space-x-2">
-              <EnvelopeIcon className="h-5 w-5 text-blue-600" />
-              <PrinterIcon className="h-5 w-5 text-blue-600 cursor-pointer" onClick={handleDownload} />
-              <PencilIcon className="h-5 w-5 text-blue-600 cursor-pointer" />
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-between items-center mt-2 border-t pt-2 text-sm text-gray-600">
-          <span className="block text-xs text-gray-500">Target Price - 70,000 Rs
-            
-        <span className=" gap-8 text-grey-600 text-sm font-semibold ml-5 px-3 py-1 rounded-lg">
-              Assigned Staff(Staff Name, +918778489889)
-            </span>
-          </span>
-          <button  className="mt-2  text-blue-500 px-3 py-1.5 mr-[-50px] text-sm rounded whitespace-nowrap">
-              Reactivate Bids
-            </button>
-          <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
-            <span>( 08/08/2024 ,  8:00PM)</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Include the modal */}
-      <QuotesModal showModal={showModal} setShowModal={setShowModal} />
-      <VendorsModal showVendorsModal={showVendorsModal} setShowVendorsModal={setShowVendorsModal} vendors={vendors} />
-
-
-      <div className="hidden md:block bg-blue-50 rounded-b-lg p-4 shadow-sm mt-3 relative">
-        <div className="grid grid-cols-12 gap-3 md:gap-4">
-          <div className="col-span-12 md:col-span-1">
-          <span className="block text-black font-semibold">Qiktrack</span>
-            <span className="block text-blue-600 font-semibold">#2345677</span>
-            <span className="block text-red-600">2d 14hr 45min</span>
-            <div className="block text-grey-500 mt-12">Remarks</div>
-          </div>
-
-          <div className="col-span-7 md:col-span-1">
-            <span className="block font-medium">8th July 2024</span>
-            <span className="block">8:00 AM</span>
-          </div>
-
-          <div className="col-span-12 md:col-span-2">
-            <span className="block font-medium ml-10">Delhi, Plant 1</span>
-            <span className="block text-xs text-gray-500 ml-10">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
-          </div>
-
-          <div className="col-span-12 md:col-span-2">
-            <span className="block font-medium">Kolkata, West Bengal</span>
-            <span className="block text-xs text-gray-500">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
-          </div>
-
-          <div className="col-span-12 md:col-span-2">
-            <span className="block">Vehicle Required - 1</span>
-            <span className="block">Vehicle Type - 1</span>
-            <span className="block">Equipments</span>
-            <a href="#" className="text-blue-600">Distance - 1500 Km</a>
-          </div>
-
-          <div className="col-span-12 md:col-span-1 flex flex-col items-center justify-center relative">
-            <div className="text-lg font-semibold text-gray-700">Rs 85,000</div>
-            <button
-              className="text-blue-600 text-sm mr-[-10px]"
-              onClick={() => setShowModal(true)}
-            >
-              View all quotes
-            </button>
-           
-
-            <div className="absolute top-0 right-[-100px] mt-1 mr-1 flex space-x-2">
-              <EnvelopeIcon className="h-5 w-5 text-blue-600" />
-              <PrinterIcon className="h-5 w-5 text-blue-600 cursor-pointer" onClick={handleDownload} />
-              <PencilIcon className="h-5 w-5 text-blue-600 cursor-pointer" />
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-between items-center mt-2 border-t pt-2 text-sm text-gray-600">
-          <span className="block text-xs text-gray-500">Target Price - 70,000 Rs
-            
-        <span className=" gap-8 text-grey-600 text-sm font-semibold ml-5 px-3 py-1 rounded-lg">
-              Assigned Staff(Staff Name, +918778489889)
-            </span>
-          </span>
-          <button  className="mt-2  text-blue-500 px-3 py-1.5 mr-[-50px] text-sm rounded whitespace-nowrap ">
-              Reactivate Bids
-            </button>
-          <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
-            <span>( 08/08/2024 ,  8:00PM)</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Include the modal */}
-      <QuotesModal showModal={showModal} setShowModal={setShowModal} />
-      <VendorsModal showVendorsModal={showVendorsModal} setShowVendorsModal={setShowVendorsModal} vendors={vendors} />
 
     </>
   );

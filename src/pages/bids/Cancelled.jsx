@@ -5,6 +5,7 @@ import TabSection from '../../components/Dashboard/TabSection';
 import ContractCard from '../../components/Dashboard/ContractedLane';
 import TableHeader from '../../components/Dashboard/TableHeader';
 import CancelledCard from '../../components/Dashboard/CancelledCard';
+import ResultTableHeader from '../../components/Dashboard/ResultTableHeader';
 
 const Cancelled = () => {
 
@@ -13,7 +14,7 @@ const Cancelled = () => {
       <Header />
       <HeaderToolbar />
       <TabSection  />
-      <TableHeader />
+      <ResultTableHeader/>
       <CancelledCard/>
     </div>
   );

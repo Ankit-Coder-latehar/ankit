@@ -225,14 +225,14 @@ const ResultCard = () => {
             <div className="block text-grey-500 mt-12">Remarks</div>
           </div>
 
-          <div className="col-span-7 md:col-span-1">
-            <span className="block font-medium">8th July 2024</span>
-            <span className="block">8:00 AM</span>
+          <div className="col-span-6 md:col-span-2">
+            <span className="block font-medium ml-6">8th July 2024</span>
+            <span className="block ml-6">8:00 AM</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
-            <span className="block font-medium ml-10">Delhi, Plant 1</span>
-            <span className="block text-xs text-gray-500 ml-10">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
+            <span className="block font-medium ml-4">Delhi, Plant 1</span>
+            <span className="block text-xs text-gray-500 ml-4">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
@@ -240,21 +240,20 @@ const ResultCard = () => {
             <span className="block text-xs text-gray-500">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
           </div>
 
-          <div className="col-span-12 md:col-span-2">
+          <div className="col-span-12 md:col-span-2 ml-9">
             <span className="block">Vehicle Required - 1</span>
             <span className="block">Vehicle Type - 1</span>
             <span className="block">Equipments</span>
             <a href="#" className="text-blue-600">Distance - 1500 Km</a>
-           
           </div>
 
-          <div className="col-span-12 md:col-span-1 flex flex-col items-center justify-center relative">
+          <div className="col-span-12 md:col-span-2 flex flex-col items-center justify-center relative ml-9 ">
             <div className="text-lg font-semibold text-gray-700"></div>
-            <span className='ml-2 '>Rs 90000</span>
+            <span className='mt-[-30px] mr-20'>Rs 90000</span>
            <div>
-            <span className='ml-6'>Vendor</span>
+            <span className='mt-[-30px] mr-2'>Vendor</span>
            <button
-              className="text-blue-600 text-sm ml-5"
+              className="text-blue-600 text-sm"
               onClick={() => setShowVendorDetailsModal(true)}
             >
              (vendor info)

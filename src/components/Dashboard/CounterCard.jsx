@@ -145,14 +145,14 @@ const CounterCard = () => {
             <div className="block text-grey-500 mt-12">Remarks</div>
           </div>
 
-          <div className="col-span-7 md:col-span-1">
+          <div className="col-span-6 md:col-span-2 ml-6">
             <span className="block font-medium">8th July 2024</span>
             <span className="block">8:00 AM</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
-            <span className="block font-medium ml-10">Delhi, Plant 1</span>
-            <span className="block text-xs text-gray-500 ml-10">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
+            <span className="block font-medium ml-4">Delhi, Plant 1</span>
+            <span className="block text-xs text-gray-500 ml-4">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
@@ -160,7 +160,7 @@ const CounterCard = () => {
             <span className="block text-xs text-gray-500">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
           </div>
 
-          <div className="col-span-12 md:col-span-2">
+          <div className="col-span-12 md:col-span-2 ml-9">
             <span className="block">Vehicle Required - 1</span>
             <span className="block">Vehicle Type - 1</span>
             <span className="block">Equipments</span>
@@ -168,8 +168,8 @@ const CounterCard = () => {
            
           </div>
 
-          <div className="col-span-12 md:col-span-1 flex flex-col items-center justify-center relative">
-            <div className="text-lg font-semibold text-gray-700 ml-5">Counter(46)</div>
+          <div className="col-span-12 md:col-span-2 flex flex-col items-center justify-center relative ml-4">
+            <div className="text-lg font-semibold text-gray-700 ml-4 mt-[-25px]">Counter(46)</div>
 
            <div>
             <span className='ml-4'></span>

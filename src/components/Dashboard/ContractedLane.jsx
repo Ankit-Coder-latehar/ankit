@@ -51,6 +51,7 @@ const QuotesModal = ({ showModal, setShowModal }) => {
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
           onClick={() => setShowModal(false)}
         >
+
         </button>
         <div className="bg-blue-700 text-white p-4 rounded-t-lg flex items-center justify-between">
           <h2 className="text-lg">#7102687</h2>
@@ -218,14 +219,14 @@ const ContractCard = () => {
             <div className="block text-grey-500 mt-12">Remarks</div>
           </div>
 
-          <div className="col-span-7 md:col-span-1">
-            <span className="block font-medium ml-2">8th July 2024</span>
-            <span className="block ml-2">8:00 AM</span>
+          <div className="col-span-6 md:col-span-2">
+            <span className="block font-medium ml-6">8th July 2024</span>
+            <span className="block ml-6">8:00 AM</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
-            <span className="block font-medium ml-10">Delhi, Plant 1</span>
-            <span className="block text-xs text-gray-500 ml-10">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
+            <span className="block font-medium ml-4">Delhi, Plant 1</span>
+            <span className="block text-xs text-gray-500 ml-4">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
           </div>
 
           <div className="col-span-12 md:col-span-2">
@@ -233,17 +234,17 @@ const ContractCard = () => {
             <span className="block text-xs text-gray-500">(XYZ Warehouse Gurgaon, Haryana 12345)</span>
           </div>
 
-          <div className="col-span-12 md:col-span-2">
+          <div className="col-span-12 md:col-span-2 ml-9">
             <span className="block">Vehicle Required - 1</span>
             <span className="block">Vehicle Type - 1</span>
             <span className="block">Equipments</span>
             <a href="#" className="text-blue-600">Distance - 1500 Km</a>
           </div>
 
-          <div className="col-span-12 md:col-span-1 flex flex-col items-center justify-center relative">
-            <div className="text-lg font-semibold text-gray-700">Rs 85,000</div>
+          <div className="col-span-12 md:col-span-2 flex flex-col items-center justify-center relative ml-9">
+            <div className="text-lg font-semibold text-gray-700 mr-5">Rs 85,000</div>
             <button
-              className="text-blue-600 text-sm mr-[-10px]"
+              className="text-blue-600 text-sm mr-[-4px]"
               onClick={() => setShowModal(true)}
             >
               View all quotes
