@@ -4,41 +4,31 @@ import { ChevronDownIcon, EnvelopeIcon, PrinterIcon,EyeIcon,CheckIcon, XMarkIcon
 
 // Modal Component
 const QuotesModal = ({ showModal, setShowModal }) => {
-  const quotes = [
+  const vendors = [
     {
-      transporter: 'Transporter A',
-      level: 'L1',
-      amount: '₹ 25000',
-      details: 'FTL (Offline)',
-      note: 'Transporter could/did not participate in auction',
+      name: 'Vendor A',
+      viewed: true,
+      responded: true,
     },
     {
-      transporter: 'Transporter B',
-      level: 'L2',
-      amount: '₹ 27000 >> ₹ 25500 >> ₹ 25200',
-      details: 'FTL (Offline)',
-      note: 'Renegotiated',
+      name: 'Vendor B',
+      viewed: true,
+      responded: false,
     },
     {
-      transporter: 'Transporter C',
-      level: 'L3',
-      amount: '₹ 28000 >> ₹ 25700 >> ₹ 25200',
-      details: 'FTL (Offline)',
-      note: 'Renegotiated',
+      name: 'Vendor C',
+      viewed: false,
+      responded: true,
     },
     {
-      transporter: 'Transporter D',
-      level: 'L4',
-      amount: '₹ 29000 >> ₹ 28500 >> ₹ 28000',
-      details: 'FTL (Offline)',
-      note: 'Renegotiated',
+      name: 'Vendor D',
+      viewed: false,
+      responded: false,
     },
     {
-      transporter: 'Transporter E',
-      level: 'L5',
-      amount: '₹ 35000 >> ₹ 31000',
-      details: 'FTL (Offline)',
-      note: 'Renegotiated',
+      name: 'Vendor E',
+      viewed: true,
+      responded: true,
     },
   ];
 
@@ -47,20 +37,14 @@ const QuotesModal = ({ showModal, setShowModal }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-3/4 p-6 relative">
-        <button
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-          onClick={() => setShowModal(false)}
-        >
-
-        </button>
+        
         <div className="bg-blue-700 text-white p-4 rounded-t-lg flex items-center justify-between">
           <h2 className="text-lg">#7102687</h2>
           <button
-            className="text-white"
-            onClick={() => setShowModal(false)}
-          >
-            <XMarkIcon className="h-6 w-6" />
-          </button>
+          onClick={() => setShowModal(false)}
+        >
+       <XMarkIcon className="h-6 w-6" />
+        </button>
         </div>
         <div className="border-b p-4">
           <div className="flex justify-between text-gray-600">
@@ -85,21 +69,38 @@ const QuotesModal = ({ showModal, setShowModal }) => {
               <p className="text-sm">Vehicle Required: 1<br/>Vehicle Type: 1<br/>Qty/Vehicle: 15 MT</p>
             </div>
             <div>
-              <p className="text-sm font-medium">Status</p>
-              <p className="text-sm text-red-500">Cancelled</p>
+              <p className="text-sm font-medium">Target Price</p>
+              <p className="text-sm text-red-500">Rs 85000</p>
             </div>
           </div>
         </div>
+        {/* Replacing the Quote history with Vendor Information */}
         <div className="p-4">
-          <h3 className="text-gray-800 font-medium mb-2">Quote history</h3>
+          <h3 className="text-gray-800 font-medium mb-2">Vendor Information</h3>
           <div className="space-y-2">
-            {quotes.map((quote, index) => (
-              <div key={index} className="text-gray-600">
-                <p className="font-medium">{quote.transporter}</p>
+            <div className="flex justify-between text-gray-600">
+              <p className="text-sm font-medium">Vendor Name</p>
+              <p className="text-sm font-medium">Viewed</p>
+              <p className="text-sm font-medium">Responded</p>
+              <div className="w-40"></div> {/* Placeholder for buttons alignment */}
+            </div>
+            {vendors.map((vendor, index) => (
+              <div key={index} className="flex justify-between items-center text-gray-600 p-2 border-b">
+                <p className="font-medium">{vendor.name}</p>
                 <p className="text-sm">
-                  {quote.level} &nbsp; {quote.amount} &nbsp; {quote.details}
+                  <span className={vendor.viewed ? "text-green-500" : "text-red-500"}>{vendor.viewed ?  <EyeIcon className="h-5 w-5 text-green-500" /> : <EyeIcon className="h-5 w-5 text-red-500 line-through" />}</span>
                 </p>
-                <p className="text-xs italic text-gray-500">{quote.note}</p>
+                <p className="text-sm">
+                  <span className={vendor.responded ? "text-green-500" : "text-red-500"}>{vendor.responded ? <CheckIcon className="h-5 w-5 text-green-500" /> :<CheckIcon className="h-5 w-5 text-red-500 line-through" /> }</span>
+                </p>
+                <div className="flex space-x-2">
+                  <button className="bg-blue-500 text-white px-4 py-1 rounded">
+                    Counter
+                  </button>
+                  <button className="bg-green-500 text-white px-4 py-1 rounded">
+                    Assign
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -242,7 +243,7 @@ const ContractCard = () => {
           </div>
 
           <div className="col-span-12 md:col-span-2 flex flex-col items-center justify-center relative ml-9">
-            <div className="text-lg font-semibold text-gray-700 mr-5">Rs 85,000</div>
+            <div className="text-lg font-semibold text-gray-700 mr-5 mt-[-40px]">Rs 85,000</div>
             <button
               className="text-blue-600 text-sm mr-[-4px]"
               onClick={() => setShowModal(true)}
@@ -266,9 +267,6 @@ const ContractCard = () => {
               Assigned Staff(Staff Name, +918778489889)
             </span>
           </span>
-          <button onClick={() => setShowVendorsModal(true)} className="mt-2  text-blue-500 px-3 py-1.5 mr-[-50px] text-sm rounded whitespace-nowrap">
-              Assigned Vendors
-            </button>
           <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
             <span>( 08/08/2024 ,  8:00PM)</span>
           </div>

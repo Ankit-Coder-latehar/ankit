@@ -14,8 +14,8 @@ const Cancelled = () => {
       <Header />
       <HeaderToolbar />
       <TabSection  />
-      <ResultTableHeader/>
-      <CancelledCard/>
+      <TableHeader/>
+      <ContractCard/>
     </div>
   );
 };

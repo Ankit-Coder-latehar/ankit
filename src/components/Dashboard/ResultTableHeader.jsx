@@ -20,8 +20,8 @@ const ResultTableHeader = () => {
       <div className="col-span-2 flex  ml-9">
         <span className="text-sm font-medium text-gray-700 ">Details</span>
       </div>
-      <div className="col-span-2 flex items-center justify-center mr-6">
-        <span className="text-sm font-medium text-gray-700">Bid Assigned</span>
+      <div className="col-span-2 flex items-center justify-center mr-10">
+        <span className="text-sm font-medium text-gray-700">Bid Result</span>
       </div>
     </div>
 );

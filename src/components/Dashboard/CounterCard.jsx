@@ -177,7 +177,7 @@ const CounterCard = () => {
               className="text-blue-600 text-sm ml-5"
               onClick={() => setShowModal(true)}
             >
-          
+          Counter Info(3)
             </button>
             </div> 
   
@@ -196,9 +196,6 @@ const CounterCard = () => {
               Assigned Staff(Staff Name, +918778489889)
             </span>
           </span>
-          <button onClick={() => setShowModal(true)} className="mt-2  text-blue-500 px-3 py-1.5 mr-[-50px] text-sm rounded whitespace-nowrap">
-              Counter info(2)
-            </button>
           <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
             <span>( 08/08/2024 ,  8:00PM)</span>
           </div>

@@ -3,11 +3,10 @@ import { ChevronDownIcon, EnvelopeIcon, PrinterIcon,EyeIcon,CheckIcon, XMarkIcon
 
 const QuotesModal = ({ showModal, setShowModal }) => {
     const vendors = [
-      { name: 'TargetPrice', rate: 'VendorPrice' },
-      { name: 'Rs85000', rate: 'Rs 82,000' },
-      { name: 'Rs85000', rate: 'Rs 85,000' },
-      { name: 'Rs95000', rate: 'Rs 90,000' }, 
-      { name: 'Rs98000', rate: 'Rs 92,000' }, 
+      { name: 'shayam', Vendorrate: 'Rs 82,000' },
+      { name: 'Mohan',  Vendorrate: 'Rs 85,000' },
+      { name: 'Lucky', Vendorrate: 'Rs 90,000' }, 
+      { name: 'Aniket', Vendorrate: 'Rs 92,000' }, 
     ];
   
     if (!showModal) return null;
@@ -21,18 +20,21 @@ const QuotesModal = ({ showModal, setShowModal }) => {
           >
             <XMarkIcon className="h-6 w-6" />
           </button>
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Bid Response</h2>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4 flex justify-between">Vendor Name
+          <h2 className="text-xl font-semibold text-gray-800 mb-4 mr-15">Vendor Price</h2>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4 mr-20 ml-15">Target Price
+            </h2>
+          </h2>
   
           {/* Vendor list container with max height and scrollbar */}
           <div className="max-h-60 overflow-y-auto space-y-4">
             {vendors.map((vendor, index) => (
               <div key={index} className="flex justify-between items-center p-4 border rounded-md">
                 <span className="text-gray-800 font-medium">{vendor.name}</span>
-                <span className="text-gray-800">{vendor.rate}</span>
-                <div className="space-x-2">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm">Counter Bids</button>
-                  <button className="bg-green-500 text-white px-4 py-2 rounded-md text-sm">Call Vendor</button>
-                </div>
+                <span className="text-gray-800">{vendor.Vendorrate}</span>
+                <span className="text-gray-800 mr-10">{vendor.Vendorrate}</span>
+
+                
               </div>
             ))}
           </div>
@@ -43,11 +45,10 @@ const QuotesModal = ({ showModal, setShowModal }) => {
 
   const VehicleInfoModal = ({ showVehicleModal, setShowVehicleModal }) => {
     const vendors = [
-      { name: 'Vehicle No.', rate: 'Action' },
-      { name: 'JH45R4567', rate: 'Action' },
-      { name: 'Gj03R6798', rate: 'Action' },
-      { name: 'MH90Y3456', rate: 'Action' }, 
-      { name: 'KL56Y7834', rate: 'Action' }, 
+      { name: 'JH45R4567'},
+      { name: 'Gj03R6798' },
+      { name: 'MH90Y3456'}, 
+      { name: 'KL56Y7834' }, 
     ];
   
     if (!showVehicleModal) return null;
@@ -61,7 +62,12 @@ const QuotesModal = ({ showModal, setShowModal }) => {
           >
             <XMarkIcon className="h-6 w-6" />
           </button>
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Bid Response</h2>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4 flex justify-between">Vehicle Number
+          <h2 className="text-xl font-semibold text-gray-800 mb-4 mr-20 ">Action</h2>
+
+          </h2>
+         
+
   
           {/* Vendor list container with max height and scrollbar */}
           <div className="max-h-60 overflow-y-auto space-y-4">
@@ -249,9 +255,9 @@ const ResultCard = () => {
 
           <div className="col-span-12 md:col-span-2 flex flex-col items-center justify-center relative ml-9 ">
             <div className="text-lg font-semibold text-gray-700"></div>
-            <span className='mt-[-30px] mr-20'>Rs 90000</span>
+            <span className='mt-[-30px] mr-20 font-medium mt-[-25px]'>Rs 90000</span>
            <div>
-            <span className='mt-[-30px] mr-2'>Vendor</span>
+            <span className='mt-[-30px] mr-10'>Vendor Name</span><br/>
            <button
               className="text-blue-600 text-sm"
               onClick={() => setShowVendorDetailsModal(true)}
@@ -276,10 +282,10 @@ const ResultCard = () => {
             </span>
           </span>
           <button onClick={()=>setShowVehicleModal(true)} className="mt-2 ml-10  text-blue-500 px-3 py-1.5 mr-[-180px] text-sm rounded whitespace-nowrap">
-            Vehicle Info
+            Vehicle Info(3)
             </button>
             <button onClick={() => setShowModal(true)} className="mt-3   ml-10 text-blue-500 px-3 py-1.5 mr-[-180px] text-sm rounded whitespace-nowrap">
-            Responses
+            Responses(34)
             </button>
           <div className="mr-15px">Created By - <span className="font-semibold">Rahul Verma</span>
             <span>( 08/08/2024 ,  8:00PM)</span>
